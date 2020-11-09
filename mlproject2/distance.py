@@ -1,7 +1,13 @@
 from math import radians, cos, sin, asin, sqrt
 
 import string
-from mlproject2.nltkmodules import stopwords
+import nltk
+
+nltk.download('stopwords')
+nltk.download('wordnet')
+nltk.download('punkt')
+from nltk.corpus import stopwords
+# from mlproject2.nltkmodules import stopwords
 from nltk import word_tokenize
 from nltk.stem import WordNetLemmatizer
 

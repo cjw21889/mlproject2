@@ -1,11 +1,11 @@
 from math import radians, cos, sin, asin, sqrt
-
+import pandas as pd
 import string
 import nltk
 
-nltk.download('stopwords')
-nltk.download('wordnet')
-nltk.download('punkt')
+# nltk.download('stopwords')
+# nltk.download('wordnet')
+# nltk.download('punkt')
 
 from nltk.corpus import stopwords
 from nltk import word_tokenize
@@ -46,7 +46,8 @@ def haversine(lon1, lat1, lon2, lat2):
     r = 6371  # Radius of earth in kilometers. Use 3956 for miles
     return c * r
 
-
+def find_df(nums):
+    return pd.DataFrame(nums)
 
 
 
@@ -54,6 +55,7 @@ if __name__ == "__main__":
     # Le Wagon location
     lat1, lon1 = 48.865070, 2.380009
     #Insert your coordinates from google maps here
+    # print(type(test_a_df([1,2,3,4,5])))
     x = 40.459
     y = 2.1098
     lat2, lon2 = x, y

@@ -10,3 +10,4 @@ yapf
 python-gitlab
 twine
 termcolor
+nltk==3.5

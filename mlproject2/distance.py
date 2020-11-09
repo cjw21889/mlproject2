@@ -1,4 +1,27 @@
 from math import radians, cos, sin, asin, sqrt
+import string
+from nltk.corpus import stopwords
+from nltk import word_tokenize
+from nltk.stem import WordNetLemmatizer
+
+def adv_preprocessing(text):
+    lemmatizer = WordNetLemmatizer()
+    stop_words = set(stopwords.words('english'))
+    word_tokens = word_tokenize(text)
+    text = [w for w in word_tokens if not w in stop_words]
+    text = [lemmatizer.lemmatize(word) for word in text]
+    text = ' '.join(text)
+    return text
+
+def preprocessing(text, advanced=True):
+    for punc in string.punctuation:
+        text = text.replace(punc, '')
+    lower = text.lower()
+    text = ''.join(word for word in lower if not word.isdigit())
+    if advanced:
+        text = adv_preprocessing(text)
+    return text
+
 
 def haversine(lon1, lat1, lon2, lat2):
     """
@@ -15,6 +38,8 @@ def haversine(lon1, lat1, lon2, lat2):
     c = 2 * asin(sqrt(a))
     r = 6371  # Radius of earth in kilometers. Use 3956 for miles
     return c * r
+
+
 
 
 if __name__ == "__main__":

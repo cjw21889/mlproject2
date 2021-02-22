@@ -3,9 +3,9 @@ import pandas as pd
 import string
 import nltk
 
-nltk.download('stopwords')
-nltk.download('wordnet')
-nltk.download('punkt')
+# nltk.download('stopwords')
+# nltk.download('wordnet')
+# nltk.download('punkt')
 
 from nltk.corpus import stopwords
 from nltk import word_tokenize
@@ -53,6 +53,8 @@ def find_df(nums):
 
 if __name__ == "__main__":
     # Le Wagon location
+    x = input()
+    print(x)
     lat1, lon1 = 48.865070, 2.380009
     #Insert your coordinates from google maps here
     # print(type(test_a_df([1,2,3,4,5])))

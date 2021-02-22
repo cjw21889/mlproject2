@@ -3,9 +3,9 @@ import pandas as pd
 import string
 import nltk
 
-# nltk.download('stopwords')
-# nltk.download('wordnet')
-# nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('wordnet')
+nltk.download('punkt')
 
 from nltk.corpus import stopwords
 from nltk import word_tokenize
